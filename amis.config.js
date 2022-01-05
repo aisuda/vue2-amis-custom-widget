@@ -30,9 +30,8 @@ module.exports = {
       resolve('./src/assets/css/mixin.scss')
     ],
     // createDeclaration: true, // 打包时是否创建ts声明文件
-    ignoreNodeModules: true, // 打包时是否忽略 node_modules
-    projectDir: ['src', 'editor'],
-    template: resolve('./editor/index.html'), // dev本地调试时需要html模板
+    ignoreNodeModules: false, // 打包时是否忽略 node_modules
+    projectDir: ['src', 'editor']
   },
   // envParams：项目系统环境变量(根据执行命令中的环境变量批量替换项目源码中的相关参数)
   envParams: {
@@ -50,8 +49,7 @@ module.exports = {
     entry: { // 调试入口（本地编辑器中预览自定义组件入口）
       index: [
         './src/index.js',
-        './src/widget/plugin/info-card-plugin.jsx',
-        './editor/EditorDemo.jsx'
+        './src/widget/plugin/info-card-plugin.jsx'
       ],
       // preview: './src/preview.js', // 仅用于预览组件内容
     },
