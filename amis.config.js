@@ -34,18 +34,6 @@ module.exports = {
     allowList: [], // ignoreNodeModules为true时生效
     projectDir: ['src', 'editor']
   },
-  // envParams：项目系统环境变量(根据执行命令中的环境变量批量替换项目源码中的相关参数)
-  envParams: {
-    common: { // 通用参数
-      '#version#': '20200810.1',
-    },
-    local: { // 本地开发环境
-      '#assetsPublicPath#': '', // 静态资源根地址
-    },
-    online: { // 线上正式环境配置参数
-      '#assetsPublicPath#': '', // 静态资源根地址
-    },
-  },
   dev: {
     entry: { // 调试入口（本地编辑器中预览自定义组件入口）
       index: [
