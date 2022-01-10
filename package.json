@@ -29,14 +29,12 @@
       "files": [
         "/dist/index.css"
       ],
-      "status": true,
       "description": "信息展示卡片",
       "weight": 100,
       "editorPlugin": {
         "name": "vue-info-card-plugin",
         "type": "vue-info-card",
         "entry": "/dist/infoCardPlugin.umd",
-        "status": true,
         "tag": [
           "展示"
         ],
