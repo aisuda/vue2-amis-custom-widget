@@ -60,8 +60,7 @@ registerAmisEditorPlugin(InfoCardPlugin, {
   // tags: ['展示', '自定义'],
   order: 99,
   // icon: 'fa fa-file-code-o',
-  // panelTitle: '配置',
-  disabledRendererPlugin: false,
+  // panelTitle: '配置'
 });
 
 export default InfoCardPlugin;
