@@ -10,13 +10,13 @@ module.exports = {
   settings: {
     enableESLint: false, // 调试模式是否开启ESLint，默认开启ESLint检测代码格式
     enableESLintFix: false, // 是否自动修正代码格式，默认不自动修正
-    enableStyleLint: true, // 是否开启StyleLint，默认开启ESLint检测代码格式
+    enableStyleLint: false, // 是否开启StyleLint，默认开启ESLint检测代码格式
     enableStyleLintFix: false // 是否需要StyleLint自动修正代码格式
   },
   webpack: {
     resolve: {
       // webpack的resolve配置
-      extensions: ['.vue', '.js', '.jsx', '.ts', '.tsx', 'json'], // 用于配置webpack在尝试过程中用到的后缀列表
+      extensions: ['.vue', '.js', '.jsx', '.ts', '.tsx', '.min.js', '.json'], // 用于配置webpack在尝试过程中用到的后缀列表
       alias: {
         '@': resolve('src'),
         $components: resolve('src/components'),
