@@ -40,7 +40,6 @@ module.exports = {
         './src/index.js',
         './src/widget/plugin/info-card-plugin.jsx'
       ],
-      // preview: './src/preview.js', // 仅用于预览组件内容
     },
     // 用于开启本地调试模式的相关配置信息
     NODE_ENV: 'development',
@@ -58,6 +57,52 @@ module.exports = {
     },
     cssSourceMap: true,
     closeHotReload: false, // 是否关闭热更新
+  },
+  preview: {
+    entry: { // 调试入口（本地编辑器中预览自定义组件入口）
+      index: './src/preview.js',
+    },
+    // 用于开启本地调试模式的相关配置信息
+    NODE_ENV: 'development',
+    port: 80,
+    autoOpenBrowser: true,
+    assetsPublicPath: '/', // 设置静态资源的引用路径（根域名+路径）
+    assetsSubDirectory: '',
+    hostname: 'localhost',
+    proxyTable: {
+      '/apiTest': {
+        target: 'http://api-test.com.cn', // 不支持跨域的接口根地址
+        ws: true,
+        changeOrigin: true
+      }
+    },
+    cssSourceMap: true,
+    closeHotReload: false, // 是否关闭热更新
+  },
+  linkDebug: {
+    entry: { // 调试入口（本地编辑器中预览自定义组件入口）
+      index: [
+        './src/index.js', // widget/info-card.jsx
+        './src/widget/plugin/info-card-plugin.jsx',
+      ],
+    },
+    // 用于开启本地调试模式的相关配置信息
+    NODE_ENV: 'production',
+    port: 80,
+    autoOpenBrowser: false,
+    closeHtmlWebpackPlugin: true, // 关闭HtmlWebpackPlugin
+    assetsPublicPath: '/', // 设置静态资源的引用路径（根域名+路径）
+    assetsSubDirectory: '',
+    hostname: 'localhost',
+    proxyTable: {
+      '/apiTest': {
+        target: 'http://api-test.com.cn', // 不支持跨域的接口根地址
+        ws: true,
+        changeOrigin: true
+      }
+    },
+    cssSourceMap: true,
+    closeHotReload: true, // 是否关闭热更新
   },
   build2lib: {
     entry: {
