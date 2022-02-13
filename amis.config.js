@@ -35,7 +35,7 @@ module.exports = {
     projectDir: ['src', 'editor']
   },
   dev: {
-    entry: { // 调试入口（本地编辑器中预览自定义组件入口）
+    entry: { // 本地编辑器中预览自定义组件
       index: [
         './src/index.js',
         './src/widget/plugin/info-card-plugin.jsx'
@@ -59,7 +59,7 @@ module.exports = {
     closeHotReload: false, // 是否关闭热更新
   },
   preview: {
-    entry: { // 调试入口（本地编辑器中预览自定义组件入口）
+    entry: { // 本地预览自定义组件内容
       index: './src/preview.js',
     },
     // 用于开启本地调试模式的相关配置信息
@@ -80,7 +80,7 @@ module.exports = {
     closeHotReload: false, // 是否关闭热更新
   },
   linkDebug: {
-    entry: { // 调试入口（本地编辑器中预览自定义组件入口）
+    entry: { // 外链调试（amis-saas中预览自定义组件）
       index: [
         './src/index.js', // widget/info-card.jsx
         './src/widget/plugin/info-card-plugin.jsx',
