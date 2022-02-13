@@ -86,7 +86,6 @@ module.exports = {
         './src/widget/plugin/info-card-plugin.jsx',
       ],
     },
-    // 用于开启本地调试模式的相关配置信息
     NODE_ENV: 'production',
     port: 80,
     autoOpenBrowser: false,
