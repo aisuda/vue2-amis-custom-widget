@@ -10,6 +10,7 @@
 - src/widget/info-card.vue: 自定义组件代码；
 - src/index.js: 用于注册一个amis渲染器，注册成功后编辑器画布区中才会正常展示自定义组件内容；
 - src/widget/plugin/info-card-plugin.jsx: 用于注册一个amis-editor插件，注册成功后编辑器左侧组件面板中会展示；
+- src/preview.js: 用于本地预览自定义组件内容；
 - amis.config.js: amis-widget-cli配置文件。
 
 ### 开发说明
