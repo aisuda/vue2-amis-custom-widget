@@ -16,7 +16,7 @@ module.exports = {
   webpack: {
     resolve: {
       // webpack的resolve配置
-      extensions: ['.vue', '.js', '.jsx', '.ts', '.tsx', '.min.js', '.json'], // 用于配置webpack在尝试过程中用到的后缀列表
+      extensions: ['.vue', '.js', '.jsx', '.ts', '.tsx', '.umd.js', '.min.js', '.json'], // 用于配置webpack在尝试过程中用到的后缀列表
       alias: {
         '@': resolve('src'),
         $components: resolve('src/components'),
