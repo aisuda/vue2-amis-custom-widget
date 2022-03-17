@@ -1,5 +1,5 @@
 <template>
-  <div class="news-card" :key="uuid">
+  <div class="news-card">
     <div class="news-title">{{ title }}</div>
     <div class="item-imgbox">
       <div
