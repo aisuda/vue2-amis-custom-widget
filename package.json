@@ -1,6 +1,6 @@
 {
   "name": "vue-custom-widget-template",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "amis自定义组件模板（vue2.0技术栈）",
   "keywords": [
     "自定义组件模板",
@@ -61,13 +61,13 @@
     "url": "https://github.com/aisuda/vue-custom-widget-template/issues"
   },
   "dependencies": {
-    "amis-widget": "^1.3.0",
+    "amis-widget": "^1.3.5",
     "vue": "^2.6.14"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^9.1.1",
-    "amis-widget-cli": "^1.3.16",
+    "amis-widget-cli": "^1.5.2",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.9",
     "prettier": "^2.0.5",
