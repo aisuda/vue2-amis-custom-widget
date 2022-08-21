@@ -19,9 +19,6 @@
   </div>
 </template>
 <script>
-/**
- * 视频模板页
- */
 export default {
   props: {
     title: {
