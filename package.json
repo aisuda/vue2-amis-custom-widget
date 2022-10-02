@@ -61,7 +61,7 @@
     "url": "https://github.com/aisuda/vue-custom-widget-template/issues"
   },
   "dependencies": {
-    "amis-widget": "^1.3.7",
+    "amis-widget": "^2.0.5",
     "vue": "^2.6.14"
   },
   "devDependencies": {
