@@ -1,7 +1,7 @@
 /*!
- * vue-custom-widget-template v1.1.0
+ * vue-custom-widget-template v1.1.2
  * author: fex
  * build tool: AKFun
- * build time: Sun Aug 21 2022 20:11:15 GMT+0800 (中国标准时间)
+ * build time: Thu Oct 13 2022 16:20:14 GMT+0800 (中国标准时间)
  * build tool info: https://github.com/wibetter/akfun
  */
