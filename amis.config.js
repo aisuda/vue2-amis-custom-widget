@@ -32,7 +32,16 @@ module.exports = {
     // createDeclaration: true, // 打包时是否创建ts声明文件
     ignoreNodeModules: false, // 打包时是否忽略 node_modules
     allowList: [], // ignoreNodeModules为true时生效
-    projectDir: ['src', 'editor']
+    projectDir: ['src', 'editor'],
+    babelPlugins: [
+      [
+        "component",
+        {
+          "libraryName": "element-ui",
+          "styleLibraryName": "theme-chalk"
+        }
+      ]
+    ]
   },
   dev: {
     entry: { // 本地编辑器中预览自定义组件
