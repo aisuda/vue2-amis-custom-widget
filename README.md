@@ -1,4 +1,4 @@
-# vue-custom-widget-template
+# vue2-amis-custom-widget
 > amis自定义组件模板（vue2.0技术栈）
 - 备注：主要用于充当amis-widget-cli中的vue技术栈组件模板
 
