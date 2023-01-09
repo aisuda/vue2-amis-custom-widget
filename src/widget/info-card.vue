@@ -1,5 +1,5 @@
 <template>
-  <div class="news-card">
+  <div class="news-card" :class="className">
     <div class="news-title">
       {{ title }}
     </div>
@@ -58,6 +58,24 @@ export default {
   },
   mounted() {
     this.isFirstVisit = false;
+    // 根据api配置对象获取动态数据
+    if (!this.env || !this.env.fetcher) {
+      console.error('amis fetcher 未配置。');
+      return;
+    }
+    if (!this.useApi) {
+      console.error('未配置使用哪一个动态数据接口。');
+      return;
+    }
+    if (!this[this.useApi]) {
+      console.error('未找到动态数据接口。');
+      return;
+    }
+    if (this[this.useApi]) {
+      this.env.fetcher(this[this.useApi]).then((result) => {
+        console.log('动态数据接口返回:', result);
+      });
+    }
   },
   activated() {
     this.isAlive = true;
@@ -80,9 +98,6 @@ export default {
 .news-card {
   position: relative;
   box-sizing: border-box;
-  border-bottom: 1px solid #ececec;
-  margin: 0 12px;
-  padding-bottom: 12px;
 
   .news-title {
     padding: 6px 0;

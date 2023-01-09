@@ -2,7 +2,7 @@
  * @file 编辑器扩展, 增加自定义组件
  */
 // @ts-ignore
-import { registerAmisEditorPlugin } from 'amis-widget';
+import { registerAmisEditorPlugin, getSchemaTpl } from 'amis-widget';
 
 export class InfoCardPlugin {
   rendererName = 'vue-info-card';
@@ -61,32 +61,81 @@ export class InfoCardPlugin {
   panelTitle = '配置';
 
   panelControls = [
-    {
-      type: 'textarea',
-      name: 'title',
-      label: '卡片title',
-      value:
-        'amis 是一个低代码前端框架，它使用 JSON 配置来生成页面，可以减少页面开发工作量，极大提升效率。',
-    },
-    {
-      type: 'text',
-      name: 'backgroundImage',
-      label: '展示图片',
-      value:
-        'https://search-operate.cdn.bcebos.com/64c279f23794a831f9a8e7a4e0b722dd.jpg',
-    },
-    {
-      type: 'input-number',
-      name: 'img_count',
-      label: '图片数量',
-      value: 3,
-    },
-    {
-      type: 'input-number',
-      name: 'comment_count',
-      label: '评论数',
-      value: 2021,
-    },
+    getSchemaTpl('tabs', [
+      {
+        title: '常规',
+        body: [
+          getSchemaTpl('apiControl', {
+            name: 'api',
+            label: '动态数据接口1',
+            messageDesc: '可配置外部接口和API中心来获取动态数据',
+          }),
+          getSchemaTpl('apiControl', {
+            name: 'api2',
+            label: '动态数据接口2',
+            messageDesc: '可配置外部接口和API中心来获取动态数据',
+          }),
+          getSchemaTpl('apiControl', {
+            name: 'api3',
+            label: '动态数据接口3',
+            messageDesc: '可配置外部接口和API中心来获取动态数据',
+          }),
+          {
+            type: 'select',
+            name: 'useApi',
+            label: '使用哪个动态接口',
+            options: [
+              {
+                label: '动态数据接口1',
+                value: 'api',
+              },
+              {
+                label: '动态数据接口2',
+                value: 'api2',
+              },
+              {
+                label: '动态数据接口3',
+                value: 'api3',
+              },
+            ],
+          },
+          {
+            type: 'textarea',
+            name: 'title',
+            label: '卡片title',
+            value:
+              'amis 是一个低代码前端框架，它使用 JSON 配置来生成页面，可以减少页面开发工作量，极大提升效率。',
+          },
+          {
+            type: 'input-text',
+            name: 'backgroundImage',
+            label: '展示图片',
+            value:
+              'https://search-operate.cdn.bcebos.com/64c279f23794a831f9a8e7a4e0b722dd.jpg',
+          },
+          {
+            type: 'input-number',
+            name: 'img_count',
+            label: '图片数量',
+            value: 3,
+          },
+          {
+            type: 'input-number',
+            name: 'comment_count',
+            label: '评论数',
+            value: 2021,
+          },
+        ],
+      },
+      {
+        title: '外观',
+        body: [getSchemaTpl('className')],
+      },
+      {
+        title: '显隐',
+        body: [getSchemaTpl('visible')],
+      },
+    ]),
   ];
 }
 
