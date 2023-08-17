@@ -1,29 +1,39 @@
 <template>
-  <div class="news-card">
-    <div class="news-title">
-      {{ title }}
-    </div>
-    <div class="item-imgbox">
-      <div
-        class="news-img"
-        :style="{ backgroundImage: 'url(' + backgroundImage + ')' }"
-      ></div>
-      <div v-if="img_count > 0" class="img-count">
-        {{ img_count }}
+  <div>
+    <div class="news-card">
+      <div class="news-title">
+        {{ title }}
       </div>
-    </div>
-    <div class="news-info">
-      <div class="left media-mark">爱速搭 · 低代码平台</div>
-      <div v-if="comment_count && comment_count != 0" class="cmt-num right">
-        {{ agreeDataFormat(comment_count) }}评
+      <div class="item-imgbox">
+        <div
+          class="news-img"
+          :style="{ backgroundImage: 'url(' + backgroundImage + ')' }"
+        ></div>
+        <div v-if="img_count > 0" class="img-count">
+          {{ img_count }}
+        </div>
       </div>
+      <div class="news-info">
+        <div class="left media-mark">爱速搭 · 低代码平台</div>
+        <div v-if="comment_count && comment_count != 0" class="cmt-num right">
+          {{ agreeDataFormat(comment_count) }}评
+        </div>
+      </div>
+      <rate v-model="rateVal"></rate>
     </div>
-    <rate v-model="rateVal"></rate>
+    <div>
+      <Link href="https://element.eleme.io" target="_blank">默认链接</Link>
+      <Link type="primary">主要链接</Link>
+      <Link type="success">成功链接</Link>
+      <el-link type="warning">警告链接</el-link>
+      <el-link type="danger">危险链接</el-link>
+      <el-link type="info">信息链接</el-link>
+    </div>
   </div>
 </template>
 <script>
 // 按需引入element-ui中的组件
-import { Rate } from 'element-ui';
+import { Rate, Link } from 'element-ui';
 
 export default {
   props: {
@@ -54,7 +64,8 @@ export default {
     };
   },
   components: {
-    Rate, // 局部注册组件
+    Rate,
+    Link,
   },
   mounted() {
     this.isFirstVisit = false;
