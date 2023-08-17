@@ -21,19 +21,50 @@
       </div>
       <rate v-model="rateVal"></rate>
     </div>
-    <div>
+    <div class="demo2">
       <Link href="https://element.eleme.io" target="_blank">默认链接</Link>
       <Link type="primary">主要链接</Link>
       <Link type="success">成功链接</Link>
-      <el-link type="warning">警告链接</el-link>
-      <el-link type="danger">危险链接</el-link>
-      <el-link type="info">信息链接</el-link>
+      <Link type="warning">警告链接</Link>
+      <Link type="danger">危险链接</Link>
+      <Link type="info">信息链接</Link>
+    </div>
+    <div class="demo3">
+      <Menu
+        default-active="2"
+        class="el-menu-vertical-demo"
+        @open="handleOpen"
+        @close="handleClose"
+      >
+        <Submenu index="1">
+          <template slot="title">
+            <i class="el-icon-location"></i>
+            <span>导航一</span>
+          </template>
+          <MenuItemGroup>
+            <template slot="title">分组一</template>
+            <MenuItem index="1-1">选项1</MenuItem>
+            <MenuItem index="1-2">选项2</MenuItem>
+          </MenuItemGroup>
+          <MenuItemGroup title="分组2">
+            <MenuItem index="1-3">选项3</MenuItem>
+          </MenuItemGroup>
+          <Submenu index="1-4">
+            <template slot="title">选项4</template>
+            <MenuItem index="1-4-1">选项1</MenuItem>
+          </Submenu>
+        </Submenu>
+        <MenuItem index="2">
+          <i class="el-icon-menu"></i>
+          <span slot="title">导航二</span>
+        </MenuItem>
+      </Menu>
     </div>
   </div>
 </template>
 <script>
 // 按需引入element-ui中的组件
-import { Rate, Link } from 'element-ui';
+import { Rate, Link, Menu, Submenu, MenuItem, MenuItemGroup } from 'element-ui';
 
 export default {
   props: {
@@ -66,6 +97,10 @@ export default {
   components: {
     Rate,
     Link,
+    Menu,
+    Submenu,
+    MenuItem,
+    MenuItemGroup,
   },
   mounted() {
     this.isFirstVisit = false;
